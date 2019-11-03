@@ -33,4 +33,3 @@ public class UserMealsUtil {
         return null;
     }
 }
-// bed linen <- sheets for bed
