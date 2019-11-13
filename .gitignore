@@ -2,6 +2,6 @@
 out
 target
 *.iml
-log
-*.patch
 lib
+*.patch
+log
