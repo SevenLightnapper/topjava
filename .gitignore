@@ -5,3 +5,5 @@ target
 lib
 *.patch
 log
+doc
+*.md
