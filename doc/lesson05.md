@@ -212,7 +212,7 @@
   -  3.2 сводку по времени выполнения тестов также сделать для `user`
 - 4: Проверить запуск всех тестов: `mvn test` (в IDEA Maven Lifecycle - `test`, кнопку `skipTest` отжать).
 
-#### Optional
+### Optional
 
 - 5: Разделить `JdbcMealRepository` для HSQLDB (она не умеет работать с Java8 Time API) и Postgres через `@Profile` (для Postgres оставить `LocalDateTime`). 
   - Цель задания - потренироваться с [паттерном "шаблонный метод"](https://refactoring.guru/ru/design-patterns/template-method) и профилями Spring. 

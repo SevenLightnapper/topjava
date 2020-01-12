@@ -114,8 +114,15 @@
 
 -  <a href="http://ru.wikipedia.org/wiki/Транзакция_(информатика)">Транзакция. ACID. Уровни изоляции транзакций.</a>
 -  <a href="http://www.tutorialspoint.com/spring/spring_transaction_management.htm">Spring Transaction Management</a>
--  <a href="https://jira.spring.io/browse/DATAJPA-601">readOnly и Propagation.SUPPORTS</a>
 -  <a href="http://habrahabr.ru/post/232381/">`@Transactional` в тестах. Настройка EntityManagerFactory</a>
+
+> ![question](https://cloud.githubusercontent.com/assets/13649199/13672858/9cd58692-e6e7-11e5-905d-c295d2a456f1.png)  Зачем надо начинать транзакцию, если речь идет только о чтении данных? Начало транзакции при выполнении операции чтения всего лишь добавит лишних накладных расходов 
+(см. [Стратегии работы с транзакциями, pаспространенные ошибки](https://www.ibm.com/developerworks/ru/library/j-ts1/index.html))
+
+Вот ответ от Oliver Drotbohm, автора Spring-Data на предложение работать без транзакция для операций чтения (`propagation=Propagation.SUPPORTS`): [Improve performance with Propagation.SUPPORTS for readOnly operation](https://jira.spring.io/browse/DATAJPA-601). Коротко:
+- Статья устаревшая и неверно упрощает многие вещи. Есть множество вещей, которые влияют на производительность. 
+- Без транзакции не будет оптимизация по флагу `readOnly` при выполнении JDBC и в управлении ресурсами Spring's JPA. (в том числе выключение `flush`)
+См. [Non-transactional data access and the auto-commit mode](https://developer.jboss.org/wiki/Non-transactionalDataAccessAndTheAuto-commitMode)
 
 Справочник:
    - <a href="https://www.youtube.com/watch?v=dFASbaIG-UU">Видео: Вячеслав Круглов — Как начинающему Java-разработчику подружиться со своей базой данных?</a>
@@ -202,7 +209,7 @@ Hibernate (как любая ORM) реализует маппинг таблиц
   - <a href="https://en.wikibooks.org/wiki/Java_Persistence/ManyToOne">Реализация ManyToOne</a>
 - 2: Имплементировать и протестировать `JpaMealRepository`.
 
-#### Optional
+### Optional
 
 - 3: Добавить в тесты `MealServiceTest` функциональность `@Rule`:
   - 3.1: проверку Exception

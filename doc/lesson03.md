@@ -112,7 +112,6 @@ GRANT ALL PRIVILEGES ON DATABASE topjava TO "user";
   - <a href="https://www.youtube.com/playlist?list=PLIU76b8Cjem5qdMQLXiIwGLTLyUHkTqi2">Уроки по JDBC</a>
   - <a href="http://postgresguide.com/">Postgres Guide</a>
   - <a href="http://www.postgresqltutorial.com">PostgreSQL Tutorial</a>
-  - <a href="http://campus.codeschool.com/courses/try-sql">Try SQL</a>
   - <a href="http://java-course.ru/begin/database01/">Базы данных на Java</a>
   - <a href="http://java-course.ru/begin/database02/">Возможности JDBC — второй этап</a>
 - Дополнительно:
@@ -166,7 +165,7 @@ GRANT ALL PRIVILEGES ON DATABASE topjava TO "user";
 **Приложение перестало работать, тк. для репозитория мы используем заглушку `JdbcMealRepository`**
  
 ### ![video](https://cloud.githubusercontent.com/assets/13649199/13672715/06dbc6ce-e6e7-11e5-81a9-04fbddb9e488.png) 11. <a href="https://drive.google.com/open?id=0B9Ye2auQ_NsFNDlOQVpOWF82OTA">Ответы на Ваши вопросы</a>
--  Что такое REST? <a href="http://blog.mwaysolutions.com/2014/06/05/10-best-practices-for-better-restful-api/">10 Best Practices for Better RESTful API</a>
+-  Что такое REST? <a href="https://medium.com/@mwaysolutions/10-best-practices-for-better-restful-api-cbe81b06f291">10 Best Practices for Better RESTful API</a>
 -  Зачем нужна сортировка еды?
 -  Можно ли обойтись без `MapSqlParameterSource`?
 -  Как происходит работа с DB в тестах?
@@ -234,7 +233,7 @@ UNIQUE индекс нужен для обеcпечения уникальнос
   - 3.4. Cписок еды должен быть отсортирован (тогда мы его сможем сравнивать с тестовыми данными). Кроме того это требуется для UI и API: последняя еда наверху.
 - 4 Проверить работу MealServlet, запустив приложение
 
-#### Optional
+### Optional
 - 5 Сделать `MealServiceTest` из `MealService` и реализовать тесты для `JdbcMealRepository`.
 > По `Ctrl+Shift+T` (выбрать JUnit4) можно создать тест для конкретного класса, выбрав для него нужные методы. Тестовый класс создастся в папке `test` в том же пакете, что и тестируемый. 
   - 5.1 Сделать тестовые данные `MealTestData` (точно такие же, как вставляем в `populateDB.sql`).
