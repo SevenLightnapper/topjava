@@ -7,4 +7,4 @@ lib
 log
 doc
 *.md
-/patches/lesson_8/icon-meal.png
+*.png
